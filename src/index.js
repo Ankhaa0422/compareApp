@@ -2,11 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Aguulagch from './view/aguulagch/Aguulagch'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Aguulagch />
   </React.StrictMode>,
   document.getElementById('root')
 );
