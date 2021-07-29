@@ -7,6 +7,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerFluid: {
@@ -15,6 +19,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerXxl: {
@@ -23,6 +31,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerXl: {
@@ -31,6 +43,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerLg: {
@@ -39,6 +55,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerMd: {
@@ -47,6 +67,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  containerSm: {
@@ -55,6 +79,10 @@ const Zagwar = makeStyles({
   paddingLeft: " var(--bs - gutter - x, 0.75rem)",
   marginRight: "auto",
   marginLeft: "auto",
+  display: "flex",
+  flexWrap: "inherit",
+  alignItems: "center",
+  justifyContent: "space-between",
  },
 
  '@media(min-width: 576px)': {
@@ -127,6 +155,7 @@ const Zagwar = makeStyles({
    maxWidth: '1320px',
   }
  },
+
  Row: {
   '--bs-gutter-x': '1.5rem',
   '--bs-gutter-y': '0',
@@ -570,7 +599,6 @@ const Zagwar = makeStyles({
  },
 
  Logo: {
-  margin: "4px 20px",
   "& img": {
    width: "60px",
    height: "auto",
@@ -582,5 +610,82 @@ const Zagwar = makeStyles({
    borderRight: "1px solid #D3D3D3"
   }
  },
+
+ HeaderMenu: {
+  position: "fixed",
+  alignItems: "center",
+  height: "46px",
+  top: "0",
+  borderBottom: "1px solid #d3d3d3",
+  // "&:before": {
+  //  content: "",
+  //  position: "relative",
+  //  height: "50px",
+  //  width: "100%",
+  //  zIndex: "99",
+  //  borderBottom: "1px solid #D3D3D3",
+  // }
+ },
+
+ NewtrehHuudas: {
+  background: "url(https://images3.alphacoders.com/290/thumb-1920-29025.jpg)",
+  backgroundSize: "cover",
+  backgroundPosition: "fixed",
+  display: 'flex',
+  flexWrap: "wrap",
+  justifyContent: "center",
+  alignContent: "center",
+  alignItems: "center",
+ },
+
+ NewtrehCard: {
+  position: 'relative',
+  width: '350px',
+  height: 'auto',
+  padding: '12px 15px',
+  background: 'rgba(255, 255, 255, 0.35)',
+  boxShadow: '0 4px 12px 0 #D3D3D3',
+  backdropFilter: 'blur( 3px)',
+  webkitBackdropFilter: 'blur(3px)',
+  borderRadius: '10px',
+  border: '1px solid rgba(255, 255, 255, 0.18)',
+ },
+
+ NewtrehCardTitle: {
+  textAlign: 'center',
+  fontSize: '23px',
+  fontWeight: '700',
+ },
+
+ NewtrehBtnSection: {
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+ },
+
+ NewtrehBtn: {
+  width: '250px',
+  marginTop: '10px',
+ },
+
+ ShilenEffect: {
+  background: 'rgba(255, 255, 255, 0.35)',
+  boxShadow: '0 4px 12px 0 #D3D3D3',
+  backdropFilter: 'blur( 3px)',
+  webkitBackdropFilter: 'blur(3px)',
+  borderRadius: '10px',
+  border: '1px solid rgba(255, 255, 255, 0.18)',
+ },
+
+ NewtrehCardFooter: {
+  display: 'flex',
+  borderTop: '1px solid #D3D3D3',
+  marginTop: '10px',
+  color: '#036ffc',
+  justifyContent: 'center',
+  alignContent: 'center',
+ },
+
 });
 export default Zagwar;

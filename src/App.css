@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: #000;
+}
+
+.ant-menu-horizontal > .ant-menu-item a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
