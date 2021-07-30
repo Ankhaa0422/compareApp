@@ -161,19 +161,16 @@ const Zagwar = makeStyles({
   '--bs-gutter-y': '0',
   display: 'flex',
   flexWrap: 'wrap',
-  marginTop: 'calc(var(--bs-gutter-y) * -1)',
-  marginRight: 'calc(var(--bs-gutter-x) / -2)',
-  marginLeft: 'calc(var(--bs-gutter-x) / -2)',
- },
- '.row > *': {
-  flexShrink: '0',
-  width: '100%',
-  maxWidth: '100%',
-  paddingRight: 'calc(var(--bs-gutter-x) / 2)',
-  paddingLeft: 'calc(var(--bs-gutter-x) / 2)',
-  marginTop: 'var(--bs-gutter-y)',
- },
 
+ },
+ '.Row-65 > *': {
+  flexShrink: 0,
+  width: "100%",
+  maxWidth: "100%",
+  paddingRight: "calc(var(--bs-gutter-x) / 2)",
+  paddingLeft: "calc(var(--bs-gutter-x) / 2)",
+  marginTop: "var(--bs-gutter-y)"
+ },
  Col: {
   flex: '1 0 0%',
  },
@@ -599,32 +596,39 @@ const Zagwar = makeStyles({
  },
 
  Logo: {
+  height: '47px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignContent: 'center',
+  background: '#fff',
+
   "& img": {
-   width: "60px",
-   height: "auto",
+   width: "auto",
+   height: "100%",
    marginTop: "-5px",
   },
   textAlign: "center",
   alignItems: "center",
-  "&::before": {
-   borderRight: "1px solid #D3D3D3"
-  }
  },
 
  HeaderMenu: {
   position: "fixed",
   alignItems: "center",
   height: "46px",
+  width: '100%',
   top: "0",
-  borderBottom: "1px solid #d3d3d3",
-  // "&:before": {
-  //  content: "",
-  //  position: "relative",
-  //  height: "50px",
-  //  width: "100%",
-  //  zIndex: "99",
-  //  borderBottom: "1px solid #D3D3D3",
-  // }
+  padding: '0px 24px !important',
+  borderBottom: "1px solid #f0f0f0",
+  "&:after": {
+   content: '""',
+   position: "relative",
+   height: "20px",
+   width: "100%",
+  },
+ },
+
+ HuudasRender: {
+  width: '100%'
  },
 
  NewtrehHuudas: {
@@ -685,6 +689,73 @@ const Zagwar = makeStyles({
   color: '#036ffc',
   justifyContent: 'center',
   alignContent: 'center',
+ },
+
+ FloatingRight: {
+  float: 'right',
+ },
+
+ TovchZagwar: {
+  margin: '12px 6px !important',
+  marginTop: '0px',
+ },
+
+ hvsnegt: {
+  width: '100%',
+ },
+
+ hvsnegTolgoi: {
+
+  '& tr:nth-child(odd)': {
+   border: 'none',
+   background: '#48755e',
+   '& th': {
+    padding: '12px',
+   }
+  },
+  '& tr': {
+   background: '#71a68b',
+   color: '#FFF',
+   borderBottom: '2px solid #DDDDDD',
+   '& th': {
+    padding: '12px',
+    paddingTop: '15px',
+    fontSize: '13px',
+    paddingBottom: '15px',
+    fontWeight: '600',
+    textAlign: 'left',
+   }
+  },
+ },
+
+ hvsnegtBiye: {
+  '& tr': {
+   background: '#FFF',
+   cursor: 'normal',
+   borderBottom: '1px solid #DDDDDD',
+   '& td': {
+    padding: '12px',
+    paddingTop: '10px',
+    paddingBottom: '10px',
+    fontSize: '12px',
+    fontWeight: '500',
+    textAlign: 'left',
+   },
+   '& td:last-child': {
+    borderLeft: '1px solid #DDDDDD',
+    color: '#ff0000',
+   },
+  },
+  '& tr:nth-child(even)': {
+   background: '#f5e9e9',
+  },
+  '& tr:hover': {
+   borderBottom: '1px solid #00a2ff',
+  },
+ },
+
+ textGolloh: {
+  textAlign: 'center !important',
  },
 
 });

@@ -13,6 +13,16 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb {
+  background: #A0A0A0;
+  border-radius: 3px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -46,3 +56,59 @@
   text-decoration: none;
 }
 
+.navItems-100 > .navItem-99 {
+  display: inline-block;
+}
+.ant-page-header-heading-extra {
+  margin: 0 !important;
+}
+.ant-page-header-heading-left {
+  margin: 0 !important;
+}
+.ant-menu-horizontal > .ant-menu-item-selected a {
+  color: #000 !important;
+}
+
+.ant-menu-horizontal > .ant-menu-item a:hover {
+  color: #000 !important;
+  text-decoration: none;
+}
+
+.ant-collapse-header { 
+  font-size: 24px;
+  font-weight: 800;
+}
+.ant-btn {
+  border: 1px solid #1890ff !important;
+  color: #1890ff !important;
+}
+.ant-btn-primary { 
+  color: #FFFFFF !important;
+}
+
+.ant-collapse .ant-collapse-item-disabled > .ant-collapse-header, 
+.ant-collapse .ant-collapse-item-disabled > .ant-collapse-header > .arrow {
+  color: #000000 !important;
+  cursor: default !important;
+}
+
+.ant-collapse > .ant-collapse-item > .ant-collapse-header {
+  cursor: default !important;
+}
+
+.row-dragging {
+  background: #fafafa;
+  border: 1px solid #ccc;
+}
+
+.row-dragging td {
+  padding: 16px;
+}
+
+.row-dragging .drag-visible {
+  visibility: visible;
+}
+
+.ant-btn-link {
+  border: none !important;
+}
