@@ -1,6 +1,6 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect, } from 'react'
 import { AguulagchCtx } from '../aguulagch/Aguulagch'
-import { Button, Collapse, Tooltip, Card, Tag, Modal } from 'antd'
+import { Button, Collapse, Tooltip, Card, Modal } from 'antd'
 import Zagwar from '../zagwar/Zagwar'
 import { FilterOutlined, MenuOutlined, PlusOutlined, CheckOutlined } from '@ant-design/icons'
 import '../../App.css'
@@ -9,17 +9,10 @@ import { sortableHandle } from 'react-sortable-hoc';
 import { useWindowDimensions } from '../component/Utilities'
 import Table from 'react-bootstrap/Table'
 
-function Appartment() {
+function House() {
   const hemjee = useWindowDimensions()
   const btnRef = React.useRef()
   const { Meta } = Card;
-  const DragHandle = sortableHandle(() => {
-    return (
-      <div>
-        <MenuOutlined style={{ cursor: 'grab', color: '#999' }} />
-      </div>
-    )
-  })
   const AntCell = 'ant-table-cell'
   const Tbody = 'ant-table-tbody'
   const aguulagchCtx = useContext(AguulagchCtx)
@@ -31,10 +24,11 @@ function Appartment() {
 
   useEffect(() => {
     const data = []
+    console.log(aguulagchCtx.tomState.baishinData)
     aguulagchCtx.tomState.baishinData.map((x, i) => {
       aguulagchCtx.songogdson.map((n, m) => {
         if (Number(n) === i) {
-          if (x.turul === 'appartment') {
+          if (x.turul === 'house') {
             data.push({
               title: <Card
                 style={{ width: 242, margin: '12px 14px' }}
@@ -57,14 +51,12 @@ function Appartment() {
               fixed: 'top',
               width: 242,
               turul: x.turul,
-
             })
             aguulagchCtx.setColumns(data)
           }
         }
       })
     })
-    console.log(aguulagchCtx.songogdson)
   }, [aguulagchCtx.songogdson])
 
   const modalHaah = () => {
@@ -78,7 +70,15 @@ function Appartment() {
     setVisible(false);
   }
 
-
+  const cardSongoh = (e) => {
+    debugger;
+    aguulagchCtx.setTomState((tom) => {
+      tom = { ...tom }
+      const baishinData = aguulagchCtx.tomState.baishinData
+      aguulagchCtx.tomState.baishinData[Number(e.target.accessKey)].checked = !aguulagchCtx.tomState.baishinData[Number(e.target.accessKey)].checked
+      return tom
+    })
+  }
 
   const filterTovch = () => {
     return (
@@ -96,6 +96,7 @@ function Appartment() {
   }
   return (
     <div className={classes.HuudasRender}>
+
       <div className={classes.Row}>
         <div className={classes.Col12}>
           <Collapse
@@ -103,7 +104,7 @@ function Appartment() {
             activeKey={!shvvhTovch ? '0' : '1'}
             style={{ width: '100%', borderBottom: '1px solid #f0f0f0', padding: '18px 30px' }}>
             <Panel
-              header="Compare Appartments"
+              header="Compare House"
               key="1"
               collapsible='header'
               showArrow={false}
@@ -138,13 +139,12 @@ function Appartment() {
                     return (
                       <>
                         {
-                          row.turul === 'appartment' &&
+                          row.turul === 'house' &&
                           <th className={`${classes.cardBairlah} ${AntCell}`}>
                             {row.title}
                           </th>
                         }
                       </>
-
                     )
                   })
                 }
@@ -152,15 +152,17 @@ function Appartment() {
             </thead>
             {
               aguulagchCtx.columns.length > 1 &&
-              <tbody className={`${classes.hvsnegtBiye} ${Tbody}`}>
+              <tbody className={`${classes.hvsnegtBiye} ${Tbody}`} style={{ overflowY: 'scroll' }}>
                 {
                   Object.keys(aguulagchCtx.toggledTovch.tovch).map((row, index) => {
                     return (
                       <>
                         {
                           aguulagchCtx.toggledTovch.tovch[row].songoson ?
-                            <tr data-row-key={index}>
-                              <th className={`${classes.muriinTolgoi} ${AntCell}`} style={{ position: 'sticky', left: 0, zIndex: 1 }}>
+                            <tr data-row-key={index} className={classes.hvsnegtMur}>
+                              <th
+                                className={`${classes.muriinTolgoi} ${AntCell}`}
+                                style={{ position: 'sticky', left: 0, zIndex: 1 }}>
                                 <div className='muriinGarchig'>
                                   <MenuOutlined style={{ cursor: 'grab', color: '#999' }} /> &nbsp;&nbsp;<span className="MuriinKhoch">{row}</span>
                                 </div>
@@ -175,7 +177,7 @@ function Appartment() {
                                           return (
                                             <>
                                               {
-                                                mur.id === col.dataIndex && mur.turul === 'appartment' &&
+                                                mur.id === col.dataIndex && mur.turul === 'house' &&
                                                 <td className={`${classes.textGolloh} ${AntCell}`} style={{ width: '270px' }}><b>{mur[aguulagchCtx.toggledTovch.tovch[row].id]}</b></td>
                                               }
                                             </>
@@ -198,21 +200,21 @@ function Appartment() {
         </div>
       </div>
       <Modal
-        title="Choose Appartments"
+        title="Choose Houses"
         centered
         visible={visible}
         onCancel={modalHaah}
-        width={hemjee.width - 326}
+        width={1000}
         footer={[]}
         maskClosable={false}
       >
-        <div className={`${classes.Row} ${classes.ModalRow}`}>
+        <div className={classes.Row}>
           {
             aguulagchCtx.tomState.baishinData.map((x, i) => {
               return (
                 <>
                   {
-                    x.turul === 'appartment' &&
+                    x.turul === 'house' &&
                     <div className={classes.Col3} style={{ margin: '12px 14px' }}>
                       <div
                         onClick={aguulagchCtx.cardSongoh}
@@ -251,4 +253,4 @@ function Appartment() {
   )
 }
 
-export default Appartment
+export default House

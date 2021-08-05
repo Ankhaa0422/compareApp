@@ -1,5 +1,4 @@
 import { makeStyles } from "@fluentui/react";
-
 const Zagwar = makeStyles({
  container: {
   width: '100%',
@@ -741,10 +740,6 @@ const Zagwar = makeStyles({
     fontWeight: '500',
     textAlign: 'left',
    },
-   '& td:last-child': {
-    borderLeft: '1px solid #DDDDDD',
-    color: '#ff0000',
-   },
   },
   '& tr:nth-child(even)': {
    background: '#f5e9e9',
@@ -758,5 +753,97 @@ const Zagwar = makeStyles({
   textAlign: 'center !important',
  },
 
+ clickableCard: {
+  position: 'relative',
+  display: 'block',
+  transition: '0.3s ease-in',
+  '&::before': {
+   content: '""',
+   position: 'absolute',
+   width: '238px',
+   height: '100%',
+   zIndex: '1',
+  },
+  '&:hover': {
+   boxShadow: '0px 3px 8px -4px #03f8ec',
+   transition: '0.3s ease-in',
+   '.ant-card': {
+   },
+  }
+ },
+ cardCheckBox: {
+  float: 'right',
+  height: '16px !important',
+  width: '16px !important',
+  minWidth: '16px !important',
+  margin: '6px 0 !important',
+  fontSize: '8px !important',
+ },
+
+ HaritsuulahHeseg: {
+  position: 'relative',
+  width: '100%',
+  height: '700px',
+ },
+
+ compareHeader: {
+  top: '0',
+  position: 'sticky',
+  height: '338px',
+  background: '#fff',
+  borderBottom: '1px solid #dfdfdf',
+ },
+ NemekhBtnZone: {
+  width: '200px',
+  height: '338px',
+  flexWrap: 'wrap',
+  alignContent: 'center',
+  justifyContent: 'center',
+  textAlign: 'center !important',
+  backgroundColor: '#F5F5F5',
+  boxShadow: '2px 2px 8px 0 #d3d3d3 !important',
+  '& ::before': {
+   content: '""',
+   boxShadow: '2px 2px 8px 0 #d3d3d3'
+  },
+ },
+
+ cardBairlah: {
+  // display: 'inline-block',
+  height: '360px',
+  borderBottom: '1px solid #DEDEDE',
+  overflowX: 'auto',
+  overflowY: 'hidden',
+ },
+
+ HaritsuulahHesegCard: {
+  display: 'inline-block',
+ },
+
+ muriinTolgoi: {
+  width: '248px',
+  height: '50px',
+  marginLeft: '50px',
+  position: 'relative',
+  textAlign: 'left !imporant',
+  justifyContent: 'left',
+  alignContent: 'left',
+  background: '#FFFFFF !important',
+  '& .muriinGarchig': {
+   width: '100%',
+   height: '100%',
+   display: 'flex',
+   flexWrap: 'wrap',
+   alignItems: 'center',
+   textAlign: 'left'
+  },
+  '& .MuriinKhoch': {
+   position: 'relative'
+  },
+ },
+ ModalRow: {
+  justifyContent: 'center',
+  alignContent: 'center',
+ },
 });
 export default Zagwar;

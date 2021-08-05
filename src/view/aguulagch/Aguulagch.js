@@ -1,12 +1,18 @@
 import React, { createContext, useState } from 'react'
 import GolHuudas from '../GolHuudas'
 import App from '../../App'
-
+import { baishinData } from './baishinData'
+import { FastForwardFilled } from '@ant-design/icons'
 export const AguulagchCtx = createContext()
 
 function Aguulagch(props) {
  const [tomState, setTomState] = useState({
   sad: 'null',
+  baishinData: baishinData,
+  session: {
+   newtersenEseh: false,
+   KhereglegchiinKhoch: null,
+  }
  })
 
  function shalgalt(e) {
@@ -17,45 +23,64 @@ function Aguulagch(props) {
   })
   console.log(tomState.sad)
  }
-
+ const [songogdson, setSongogdson] = useState([])
  const [toggledTovch, setToggledTovch] = React.useState({
   tovch: {
-   'Amenities': {
-    songoson: false,
-   },
-   'Location': {
-    songoson: false,
-   },
-   'Meals': {
-    songoson: false,
-   },
-   'Food Area': {
-    songoson: false,
+   'price': {
+    id: 'price',
+    songoson: true,
    },
    'Bedrooms': {
-    songoson: false,
+    id: 'bedroom',
+    songoson: true,
    },
    'Bathrooms': {
-    songoson: false,
+    id: 'bathroom',
+    songoson: true,
    },
    'Max number of people': {
-    songoson: false,
+    id: 'maxPeople',
+    songoson: true,
    },
    'Dining': {
+    id: 'dining',
     songoson: false,
    },
    'Entertainment': {
+    id: 'entertainment',
     songoson: false,
    },
    'Floor': {
+    id: 'floor',
     songoson: false,
    },
    'Outside': {
+    id: 'outside',
+    songoson: false,
+   },
+   'Amenities': {
+    id: 'amenities',
+    songoson: false,
+   },
+   'Location': {
+    id: 'location',
+    songoson: true,
+   },
+   'Meals': {
+    id: 'meals',
+    songoson: false,
+   },
+   'Food Area': {
+    id: 'foodArea',
     songoson: false,
    },
   }
  }
  )
+
+
+
+ const [columns, setColumns] = useState([])
 
  const SongohFunction = e => {
   // setToggledTovch((toggled) => {
@@ -69,8 +94,18 @@ function Aguulagch(props) {
   console.log(toggledTovch)
  }
 
+ const cardSongoh = (e) => {
+  const tvrAwah = tomState.baishinData
+  tvrAwah[Number(e.target.accessKey)].checked = !tvrAwah[Number(e.target.accessKey)].checked
+  setTomState((tom) => {
+   tom = { ...tom }
+   tomState.baishinData = tvrAwah
+   return tom
+  })
+ }
+
  return (
-  <AguulagchCtx.Provider value={{ shalgalt, toggledTovch, SongohFunction, tomState, setTomState }}>
+  <AguulagchCtx.Provider value={{ shalgalt, toggledTovch, cardSongoh, songogdson, setSongogdson, SongohFunction, tomState, setTomState, columns, setColumns }}>
    <App props={props} />
   </AguulagchCtx.Provider>
  )

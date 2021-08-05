@@ -23,9 +23,6 @@ function NewtrehHuudas() {
   }
  }
 
-
-
-
  return (
   <div className={classes.NewtrehHuudas} onMouseDown={mouseDownHandler} style={{ height: Hemjee.height - 46, width: Hemjee.width }}>
    <div className={classes.Row}>
