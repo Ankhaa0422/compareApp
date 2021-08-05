@@ -1,14 +1,14 @@
 import React, { createContext, useState } from 'react'
-import GolHuudas from '../GolHuudas'
 import App from '../../App'
 import { baishinData } from './baishinData'
-import { FastForwardFilled } from '@ant-design/icons'
+import { khereglegch } from './khereglegch'
 export const AguulagchCtx = createContext()
 
 function Aguulagch(props) {
  const [tomState, setTomState] = useState({
   sad: 'null',
   baishinData: baishinData,
+  khereglegchData: khereglegch,
   session: {
    newtersenEseh: false,
    KhereglegchiinKhoch: null,

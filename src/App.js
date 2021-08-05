@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react'
-import {
-  Nav, INavStyles, INavLinkGroup, initializeIcons
-} from '@fluentui/react';
+import { initializeIcons } from '@fluentui/react';
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from 'react-router-dom'
 import { PageHeader, Button, Descriptions, Menu } from 'antd';
 import Zagwar from './view/zagwar/Zagwar';
@@ -48,29 +46,31 @@ function GolHuudas() {
             </Menu>
           ]}
           extra={[
-            <Menu onClick={handleClick} selectedKeys={[state.current]} mode="horizontal">
+            <>
               {
                 aguulagchCtx.tomState.session.newtersenEseh ?
-                  <>
+                  <Menu onClick={handleClick} selectedKeys={[state.current]} mode="horizontal">
                     <Menu.Item key="Favourites">
                       <Link to='/favourites'>
                         My Favourites
                       </Link>
                     </Menu.Item>
-                    <Menu.Item key="Favourites">
+                    <Menu.Item key="profile">
                       <Link to='/qwsfefdvxcdz'>
-                        {aguulagchCtx.tomState.session.khereglegchiinKhoch}
+                        {aguulagchCtx.tomState.session.KhereglegchiinKhoch}
                       </Link>
                     </Menu.Item>
-                  </>
+                  </Menu>
                   :
-                  <Menu.Item key="login">
-                    <Link to='/login'>
-                      Login
-                    </Link>
-                  </Menu.Item>
+                  <Menu onClick={handleClick} selectedKeys={[state.current]} mode="horizontal">
+                    <Menu.Item key="login">
+                      <Link to='/login'>
+                        Login
+                      </Link>
+                    </Menu.Item>
+                  </Menu>
               }
-            </Menu>
+            </>
           ]}
         >
         </PageHeader>
