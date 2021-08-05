@@ -6,6 +6,8 @@ import { TextField, initializeIcons, PrimaryButton, ActionButton } from '@fluent
 import { AguulagchCtx } from '../aguulagch/Aguulagch'
 import { Redirect, useHistory } from 'react-router-dom'
 import { Alert, message } from 'antd'
+import tinykeys from 'tinykeys'
+import Qwerty from '../component/keyTanih'
 
 function NewtrehHuudas() {
  initializeIcons()
@@ -67,8 +69,8 @@ function NewtrehHuudas() {
       <h3 className={classes.NewtrehCardTitle}>HomePare</h3>
       <div>
        <TextField
-        label="UserName or Email"
-        placeholder='UserName or Email'
+        label="Хэрэглэгчийн нэр"
+        placeholder='Хэрэглэгчийн нэр'
         name="khereglegchNer"
         onChange={e => onChange(e)}
        />

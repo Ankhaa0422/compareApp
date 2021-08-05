@@ -6,8 +6,11 @@ import { FilterOutlined, MenuOutlined, PlusOutlined, CheckOutlined } from '@ant-
 import '../../App.css'
 import "antd/dist/antd.css"
 import { sortableHandle } from 'react-sortable-hoc';
+import WhiteIcon from '../../outline_tune_white_24dp.png'
+import BlackIcon from '../../outline_tune_black_24dp.png'
 import { useWindowDimensions } from '../component/Utilities'
 import Table from 'react-bootstrap/Table'
+import Qwerty from '../component/keyTanih'
 
 function House() {
   const hemjee = useWindowDimensions()
@@ -89,7 +92,7 @@ function House() {
             setShvvhTovch(!shvvhTovch)
           }}
           type={!shvvhTovch ? 'default' : 'primary'}
-          icon={<FilterOutlined />}
+          icon={!shvvhTovch ? <img src={BlackIcon} height='20' style={{ transform: 'rotate(90deg)', filter: 'invert(41%) sepia(82%) saturate(1846%) hue-rotate(190deg) brightness(100%) contrast(102%)' }} /> : <img src={WhiteIcon} height='20' style={{ transform: 'rotate(270deg)' }} />}
         />
       </Tooltip>
     )
@@ -249,6 +252,7 @@ function House() {
           }
         </div>
       </Modal>
+      <Qwerty />
     </div >
   )
 }

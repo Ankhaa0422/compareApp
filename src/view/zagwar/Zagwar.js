@@ -829,6 +829,16 @@ const Zagwar = makeStyles({
   justifyContent: 'left',
   alignContent: 'left',
   background: '#FFFFFF !important',
+  '&:before': {
+   content: '""',
+   position: 'absolute',
+   width: '100%',
+   height: '100%',
+   left: '0',
+   // filter: 'blur(1px)',
+   boxShadow: '4px 2px 10px -2px #D3D3D3',
+   borderRight: '1px solid #d3d3d3'
+  },
   '& .muriinGarchig': {
    width: '100%',
    height: '100%',
